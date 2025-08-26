@@ -1,0 +1,747 @@
+# Query: Button
+# ContextLines: 1
+
+256 results - 35 files
+
+src/index.css:
+  137    
+  138:   .button-scale {
+  139      @apply transform transition-all duration-200 ease-out active:scale-95;
+
+src/components/CTASection.tsx:
+    1: import { Button } from '@/components/ui/button';
+    2  import { ArrowRight, Users, Zap, Phone, Mail } from 'lucide-react';
+
+   42                <Link to="/staffing">
+   43:               <Button 
+   44                  size="lg" 
+
+   49                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+   50:               </Button></Link>
+   51              </div>
+
+   61                <Link to="/it-services">
+   62:               <Button 
+   63                  size="lg" 
+
+   68                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+   69:               </Button></Link>
+   70              </div>
+
+   82              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+   83:               <Button 
+   84                  size="lg" 
+
+   90                  Schedule Call
+   91:               </Button>
+   92:               <Button 
+   93                  size="lg" 
+
+   99                  Send Message
+  100:               </Button>
+  101              </div>
+
+src/components/Header.tsx:
+    1  import { useState, useEffect } from 'react';
+    2: import { Button } from '@/components/ui/button';
+    3  import { Menu, X, ChevronDown, Building2 } from 'lucide-react';
+
+  191              <Link to="/contact">
+  192:               <Button 
+  193                  variant="outline" 
+
+  196                  Contact Us
+  197:               </Button>
+  198              </Link>
+
+  200  
+  201:           {/* Mobile Menu Button */}
+  202:           <Button
+  203              variant="ghost"
+
+  207              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+  208:           </Button>
+  209          </nav>
+
+  243                <Link to="/contact">
+  244:                 <Button 
+  245                    variant="outline" 
+
+  248                    Contact Us
+  249:                 </Button>
+  250                </Link>
+
+src/components/HeroSection.tsx:
+   1: import { Button } from '@/components/ui/button';
+   2  import { ArrowRight, Users } from 'lucide-react';
+
+  43  
+  44:             {/* CTA Buttons */}
+  45              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+  46                <Link to="/contact">
+  47:               <Button 
+  48                  size="lg" 
+
+  53                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  54:               </Button></Link>
+  55                <Link to="/about">
+  56:               <Button 
+  57                  size="lg" 
+
+  62                  Read More
+  63:               </Button></Link>
+  64              </div>
+
+src/components/IndustriesSection.tsx:
+  129              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+  130:               <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+  131                  Discuss Your Needs
+  132:               </button>
+  133:               <button className="px-6 py-3 border border-border text-foreground rounded-lg font-medium hover:bg-muted transition-colors">
+  134                  View Case Studies
+  135:               </button>
+  136              </div>
+
+src/components/ScrollToTop.tsx:
+   2  import { ArrowUp } from 'lucide-react';
+   3: import { Button } from '@/components/ui/button';
+   4  
+
+   7  
+   8:   // Show button when page is scrolled up to given distance
+   9    const toggleVisibility = () => {
+
+  35        {isVisible && (
+  36:         <Button
+  37            onClick={scrollToTop}
+
+  41            <ArrowUp className="w-5 h-5" />
+  42:         </Button>
+  43        )}
+
+src/components/ServicePageLayout.tsx:
+    1  import { ReactNode } from 'react';
+    2: import { Button } from '@/components/ui/button';
+    3  import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+   45                <Link to="/contact">
+   46:                 <Button size="lg" variant="premium" className="group">
+   47                    Talk to an Expert
+   48                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+   49:                 </Button>
+   50                </Link>
+
+  118            <Link to="/contact">
+  119:             <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-primary-foreground">
+  120                Start Your Hiring
+  121                <ArrowRight className="ml-2 w-5 h-5" />
+  122:             </Button>
+  123            </Link>
+
+src/components/ServicesSection.tsx:
+   16  } from 'lucide-react';
+   17: import { Button } from '@/components/ui/button';
+   18  import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+  122                    <Link to={serviceRoutes[index]}>
+  123:                   <Button 
+  124                      variant="ghost" 
+
+  128                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+  129:                   </Button>
+  130                    </Link>
+
+  139            <Link to="it-services">
+  140:           <Button 
+  141              size="lg" 
+
+  146              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  147:           </Button>
+  148            </Link>
+
+src/components/StaffingIncludesSection.tsx:
+   2  import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+   3: import { Button } from '@/components/ui/button';
+   4  import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+  45                      <span>{s.description}</span>
+  46:                     <Button variant="ghost" className="group-hover:translate-x-1 transition-transform" aria-hidden>
+  47                        <ArrowRight className="w-5 h-5" />
+  48:                     </Button>
+  49                    </CardContent>
+
+src/components/StaffingSection.tsx:
+   11  } from 'lucide-react';
+   12: import { Button } from '@/components/ui/button';
+   13  import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+   96                    <Link to="/staffing">
+   97:                     <Button 
+   98                        variant="ghost" 
+
+  102                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+  103:                     </Button>
+  104                    </Link>
+
+  134              <Link to="/staffing">
+  135:               <Button 
+  136                  size="lg" 
+
+  140                  <ArrowRight className="ml-2 w-5 h-5" />
+  141:               </Button>
+  142              </Link>
+
+src/components/TestimonialsSection.tsx:
+  138              </p>
+  139:             <button className="px-8 py-4 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+  140                Start Your Success Story
+  141:             </button>
+  142            </div>
+
+src/components/ui/alert-dialog.tsx:
+    4  import { cn } from "@/lib/utils"
+    5: import { buttonVariants } from "@/components/ui/button"
+    6  
+
+  104      ref={ref}
+  105:     className={cn(buttonVariants(), className)}
+  106      {...props}
+
+  117      className={cn(
+  118:       buttonVariants({ variant: "outline" }),
+  119        "mt-2 sm:mt-0",
+
+src/components/ui/button.tsx:
+   6  
+   7: const buttonVariants = cva(
+   8    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 transform active:scale-95",
+
+  36  
+  37: export interface ButtonProps
+  38:   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  39:     VariantProps<typeof buttonVariants> {
+  40    asChild?: boolean
+
+  42  
+  43: const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  44    ({ className, variant, size, asChild = false, ...props }, ref) => {
+  45:     const Comp = asChild ? Slot : "button"
+  46      return (
+  47        <Comp
+  48:         className={cn(buttonVariants({ variant, size, className }))}
+  49          ref={ref}
+
+  54  )
+  55: Button.displayName = "Button"
+  56  
+  57: export { Button, buttonVariants }
+
+src/components/ui/calendar.tsx:
+   5  import { cn } from "@/lib/utils";
+   6: import { buttonVariants } from "@/components/ui/button";
+   7  
+
+  25          nav: "space-x-1 flex items-center",
+  26:         nav_button: cn(
+  27:           buttonVariants({ variant: "outline" }),
+  28            "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+  29          ),
+  30:         nav_button_previous: "absolute left-1",
+  31:         nav_button_next: "absolute right-1",
+  32          table: "w-full border-collapse space-y-1",
+
+  38          day: cn(
+  39:           buttonVariants({ variant: "ghost" }),
+  40            "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+
+src/components/ui/carousel.tsx:
+    7  import { cn } from "@/lib/utils"
+    8: import { Button } from "@/components/ui/button"
+    9  
+
+  195  const CarouselPrevious = React.forwardRef<
+  196:   HTMLButtonElement,
+  197:   React.ComponentProps<typeof Button>
+  198  >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+
+  201    return (
+  202:     <Button
+  203        ref={ref}
+
+  218        <span className="sr-only">Previous slide</span>
+  219:     </Button>
+  220    )
+
+  224  const CarouselNext = React.forwardRef<
+  225:   HTMLButtonElement,
+  226:   React.ComponentProps<typeof Button>
+  227  >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+
+  230    return (
+  231:     <Button
+  232        ref={ref}
+
+  247        <span className="sr-only">Next slide</span>
+  248:     </Button>
+  249    )
+
+src/components/ui/pagination.tsx:
+   4  import { cn } from "@/lib/utils"
+   5: import { ButtonProps, buttonVariants } from "@/components/ui/button"
+   6  
+
+  38    isActive?: boolean
+  39: } & Pick<ButtonProps, "size"> &
+  40    React.ComponentProps<"a">
+
+  50      className={cn(
+  51:       buttonVariants({
+  52          variant: isActive ? "outline" : "ghost",
+
+src/components/ui/select.tsx:
+   32  
+   33: const SelectScrollUpButton = React.forwardRef<
+   34:   React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+   35:   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
+   36  >(({ className, ...props }, ref) => (
+   37:   <SelectPrimitive.ScrollUpButton
+   38      ref={ref}
+
+   45      <ChevronUp className="h-4 w-4" />
+   46:   </SelectPrimitive.ScrollUpButton>
+   47  ))
+   48: SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
+   49  
+   50: const SelectScrollDownButton = React.forwardRef<
+   51:   React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+   52:   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
+   53  >(({ className, ...props }, ref) => (
+   54:   <SelectPrimitive.ScrollDownButton
+   55      ref={ref}
+
+   62      <ChevronDown className="h-4 w-4" />
+   63:   </SelectPrimitive.ScrollDownButton>
+   64  ))
+   65: SelectScrollDownButton.displayName =
+   66:   SelectPrimitive.ScrollDownButton.displayName
+   67  
+
+   83      >
+   84:       <SelectScrollUpButton />
+   85        <SelectPrimitive.Viewport
+
+   93        </SelectPrimitive.Viewport>
+   94:       <SelectScrollDownButton />
+   95      </SelectPrimitive.Content>
+
+  155    SelectSeparator,
+  156:   SelectScrollUpButton,
+  157:   SelectScrollDownButton,
+  158  }
+
+src/components/ui/sidebar.tsx:
+    7  import { cn } from "@/lib/utils"
+    8: import { Button } from "@/components/ui/button"
+    9  import { Input } from "@/components/ui/input"
+
+  198              data-mobile="true"
+  199:             className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+  200              style={
+
+  260  const SidebarTrigger = React.forwardRef<
+  261:   React.ElementRef<typeof Button>,
+  262:   React.ComponentProps<typeof Button>
+  263  >(({ className, onClick, ...props }, ref) => {
+
+  266    return (
+  267:     <Button
+  268        ref={ref}
+
+  280        <span className="sr-only">Toggle Sidebar</span>
+  281:     </Button>
+  282    )
+
+  286  const SidebarRail = React.forwardRef<
+  287:   HTMLButtonElement,
+  288:   React.ComponentProps<"button">
+  289  >(({ className, ...props }, ref) => {
+
+  292    return (
+  293:     <button
+  294        ref={ref}
+
+  450  const SidebarGroupAction = React.forwardRef<
+  451:   HTMLButtonElement,
+  452:   React.ComponentProps<"button"> & { asChild?: boolean }
+  453  >(({ className, asChild = false, ...props }, ref) => {
+  454:   const Comp = asChild ? Slot : "button"
+  455  
+
+  461          "absolute right-3 top-3.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
+  462:         // Increases the hit area of the button on mobile.
+  463          "after:absolute after:-inset-2 after:md:hidden",
+
+  511  
+  512: const sidebarMenuButtonVariants = cva(
+  513:   "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+  514    {
+
+  533  
+  534: const SidebarMenuButton = React.forwardRef<
+  535:   HTMLButtonElement,
+  536:   React.ComponentProps<"button"> & {
+  537      asChild?: boolean
+
+  539      tooltip?: string | React.ComponentProps<typeof TooltipContent>
+  540:   } & VariantProps<typeof sidebarMenuButtonVariants>
+  541  >(
+
+  553    ) => {
+  554:     const Comp = asChild ? Slot : "button"
+  555      const { isMobile, state } = useSidebar()
+  556  
+  557:     const button = (
+  558        <Comp
+  559          ref={ref}
+  560:         data-sidebar="menu-button"
+  561          data-size={size}
+  562          data-active={isActive}
+  563:         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+  564          {...props}
+
+  568      if (!tooltip) {
+  569:       return button
+  570      }
+
+  579        <Tooltip>
+  580:         <TooltipTrigger asChild>{button}</TooltipTrigger>
+  581          <TooltipContent
+
+  590  )
+  591: SidebarMenuButton.displayName = "SidebarMenuButton"
+  592  
+  593  const SidebarMenuAction = React.forwardRef<
+  594:   HTMLButtonElement,
+  595:   React.ComponentProps<"button"> & {
+  596      asChild?: boolean
+
+  599  >(({ className, asChild = false, showOnHover = false, ...props }, ref) => {
+  600:   const Comp = asChild ? Slot : "button"
+  601  
+
+  606        className={cn(
+  607:         "absolute right-1 top-1.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 peer-hover/menu-button:text-sidebar-accent-foreground [&>svg]:size-4 [&>svg]:shrink-0",
+  608:         // Increases the hit area of the button on mobile.
+  609          "after:absolute after:-inset-2 after:md:hidden",
+  610:         "peer-data-[size=sm]/menu-button:top-1",
+  611:         "peer-data-[size=default]/menu-button:top-1.5",
+  612:         "peer-data-[size=lg]/menu-button:top-2.5",
+  613          "group-data-[collapsible=icon]:hidden",
+  614          showOnHover &&
+  615:           "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 peer-data-[active=true]/menu-button:text-sidebar-accent-foreground md:opacity-0",
+  616          className
+
+  632        "absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums text-sidebar-foreground select-none pointer-events-none",
+  633:       "peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground",
+  634:       "peer-data-[size=sm]/menu-button:top-1",
+  635:       "peer-data-[size=default]/menu-button:top-1.5",
+  636:       "peer-data-[size=lg]/menu-button:top-2.5",
+  637        "group-data-[collapsible=icon]:hidden",
+
+  705  
+  706: const SidebarMenuSubButton = React.forwardRef<
+  707    HTMLAnchorElement,
+
+  718        ref={ref}
+  719:       data-sidebar="menu-sub-button"
+  720        data-size={size}
+
+  733  })
+  734: SidebarMenuSubButton.displayName = "SidebarMenuSubButton"
+  735  
+
+  749    SidebarMenuBadge,
+  750:   SidebarMenuButton,
+  751    SidebarMenuItem,
+
+  753    SidebarMenuSub,
+  754:   SidebarMenuSubButton,
+  755    SidebarMenuSubItem,
+
+src/components/ui/sonner.tsx:
+  17            description: "group-[.toast]:text-muted-foreground",
+  18:           actionButton:
+  19              "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+  20:           cancelButton:
+  21              "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+
+src/pages/About.tsx:
+    3  import { Card, CardContent } from '@/components/ui/card';
+    4: import { Button } from '@/components/ui/button';
+    5  import { Link } from 'react-router-dom';
+
+  194              <Link to="/contact">
+  195:               <Button size="lg" className="rounded-xl">
+  196                  👉 Get in Touch
+  197:               </Button>
+  198              </Link>
+  199              <Link to="/it-services">
+  200:               <Button variant="outline" size="lg" className="rounded-xl">
+  201                  📘 Explore Our Services
+  202:               </Button>
+  203              </Link>
+
+src/pages/AppDevelopment.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { ArrowRight, Smartphone, Tablet, Monitor, CheckCircle, Code, Zap, Settings, Users, Target, FileText, Bug, TrendingUp, Shield, Clock, Wrench, Eye, Rocket, Database, Layers, Palette, Search } from 'lucide-react';
+
+  144                  <Link to="/contact">
+  145:                   <Button size="lg" variant="premium" className="group">
+  146                      Start Your App Project
+  147                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  148:                   </Button>
+  149                  </Link>
+
+  373                <Link to="/contact">
+  374:                 <Button size="lg" variant="premium" className="group">
+  375                    Start Your Project
+  376                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  377:                 </Button>
+  378                </Link>
+
+src/pages/Careers.tsx:
+  3  import Seo from '@/components/SEO';
+  4: import { Button } from '@/components/ui/button';
+  5  import { CalendarClock } from 'lucide-react';
+
+src/pages/CloudStrategy.tsx:
+    1: import { Button } from '@/components/ui/button';
+    2  import { Link } from 'react-router-dom';
+
+  139            <Link to="/contact">
+  140:             <Button size="lg" className="text-lg px-8 py-4 hover-scale">
+  141                Contact Us Today
+  142:             </Button>
+  143            </Link>
+
+src/pages/Contact.tsx:
+    4  import * as z from "zod";
+    5: import { Button } from "@/components/ui/button";
+    6  import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
+  211  
+  212:                     <Button 
+  213                        type="submit" 
+
+  217                        Send Message
+  218:                     </Button>
+  219                    </form>
+
+src/pages/CustomSoftware.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { ArrowRight, Settings, Cog, Layers, CheckCircle, Code, Zap, Database, Users, Monitor, BarChart3, Target, Rocket, Clock, Shield, Lightbulb, Building, Cpu, Cloud, Lock, Workflow, Brain, LineChart, UserCheck, FileText, Headphones } from 'lucide-react';
+
+  154                  <Link to="/contact">
+  155:                   <Button size="lg" className="group">
+  156                      Start Your Project
+  157                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  158:                   </Button>
+  159                  </Link>
+
+  512            <Link to="/contact">
+  513:             <Button size="lg" variant="secondary" className="group shadow-lg">
+  514                Get Started Today
+  515                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  516:             </Button>
+  517            </Link>
+
+src/pages/DataMigration.tsx:
+    1: import { Button } from '@/components/ui/button';
+    2  import { Link } from 'react-router-dom';
+
+  169            <Link to="/contact">
+  170:             <Button size="lg" className="text-lg px-8 py-4 hover-scale">
+  171                Start Your Migration
+  172:             </Button>
+  173            </Link>
+
+src/pages/Ecommerce.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { ArrowRight, ShoppingCart, CreditCard, Truck, CheckCircle, Store, TrendingUp, Package, Users, BarChart3, Shield, Zap, Target, Clock, Globe, Settings, Database, Smartphone, Lock, Search, MessageSquare, Headphones, FileText } from 'lucide-react';
+
+  217                  <Link to="/contact">
+  218:                   <Button size="lg" className="group">
+  219                      Start Your Store
+  220                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  221:                   </Button>
+  222                  </Link>
+
+  633            <Link to="/contact">
+  634:             <Button size="lg" variant="secondary" className="group shadow-lg">
+  635                Get Started Today
+  636                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  637:             </Button>
+  638            </Link>
+
+src/pages/HMIS.tsx:
+    1  import { useEffect, useState } from 'react';
+    2: import { Button } from '@/components/ui/button';
+    3  import { Card, CardContent } from '@/components/ui/card';
+
+  163              <div className="flex flex-col sm:flex-row gap-4">
+  164:               <Button 
+  165                  variant="premium" 
+
+  171                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  172:               </Button>
+  173              </div>
+
+  379              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+  380:               <Button 
+  381                  variant="outline"
+
+  387                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  388:               </Button>
+  389              </div>
+
+  397            <div className="relative max-w-4xl w-full">
+  398:             <Button
+  399                variant="ghost"
+
+  403                ✕ Close
+  404:             </Button>
+  405              <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center">
+
+src/pages/ITServices.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+  149                <div className="flex flex-col sm:flex-row gap-4">
+                        <Link to="/contact">
+  150:                 <Button size="lg" variant="premium" className="group">
+  151                    Get Started Today
+  152                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  153:                 </Button></Link>
+  154                </div>
+
+  250                      </ul>
+  251:                     <Button 
+  252                        variant="ghost" 
+
+  260                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+  261:                     </Button>
+  262                    </CardContent>
+
+  283              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link to="/contact">
+  284:               <Button size="lg" variant="premium" className="group" >
+  285                  Contact Now
+  286                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  287:               </Button></Link>
+  288              </div>
+
+src/pages/ManagedServices.tsx:
+    1: import { Button } from '@/components/ui/button';
+    2  import { Link } from 'react-router-dom';
+
+   35                <Link to="/contact">
+   36:                 <Button size="lg" className="text-lg px-8 py-4">
+   37                    Contact Us
+   38:                 </Button>
+   39                </Link>
+
+  181            <Link to="/contact">
+  182:             <Button size="lg" className="text-lg px-8 py-4 hover-scale">
+  183                Get Started Today
+  184:             </Button>
+  185            </Link>
+
+src/pages/NotFound.tsx:
+   4  import Footer from '@/components/Footer';
+   5: import { Button } from '@/components/ui/button';
+   6  
+
+  23            <p className="text-xl text-muted-foreground mb-4">Oops! Page not found</p>
+  24:           <Button asChild>
+  25              <a href="/">Return to Home</a>
+  26:           </Button>
+  27          </div>
+
+src/pages/OpenSource.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { ArrowRight, Github, GitBranch, Users, CheckCircle, Code, Heart, Shield, Zap, Globe, Star, Download, Coffee, Wrench, Database, Server, Cloud } from 'lucide-react';
+
+  181                  <Link to="/contact">
+  182:                   <Button size="lg" className="group bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg transition-all duration-300">
+  183                      Start Your Project
+  184                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  185:                   </Button>
+  186                  </Link>
+
+  361                  <CardContent className="pt-4">
+  362:                   <Button variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+  363                      <Github className="w-4 h-4 mr-2" />
+  364                      View Project
+  365:                   </Button>
+  366                  </CardContent>
+
+  442                <Link to="/contact">
+  443:                 <Button size="lg" variant="secondary" className="group bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300">
+  444                    Start Your Project Today
+  445                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  446:                 </Button>
+  447                </Link>
+
+src/pages/Staffing.tsx:
+   3  import Seo from '@/components/SEO';
+   4: import { Button } from '@/components/ui/button';
+   5  import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+  68                <a href="#services">
+  69:                 <Button size="lg" variant="premium" className="group">
+  70                    Explore Our Solutions
+  71                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  72:                 </Button>
+  73                </a>
+
+src/pages/StaffingSolutions.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+  186                <Link to="/contact">
+  187:                 <Button size="lg" variant="outline" className="hover:scale-105 transition-transform duration-300">
+  188                    Talk to Our Expert
+  189:                 </Button>
+  190                </Link>
+
+  436                <Link to="/contact">
+  437:                 <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:scale-105 transition-transform duration-300 group">
+  438                    Contact Now
+  439                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  440:                 </Button>
+  441                </Link>
+
+src/pages/WebDevelopment.tsx:
+    1  import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+    2: import { Button } from '@/components/ui/button';
+    3  import { ArrowRight, Globe, Smartphone, Zap, CheckCircle, Code, Monitor, Layers, Users, Target, Lightbulb, FileText, Rocket, Shield, Eye, Settings, Search, Database, Layout, Palette, Share2 } from 'lucide-react';
+
+  162                  <Link to="/contact">
+  163:                   <Button size="lg" variant="premium" className="group">
+  164                      Start Your Project
+  165                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  166:                   </Button>
+  167                  </Link>
+
+  389                <Link to="/contact">
+  390:                 <Button size="lg" variant="premium" className="group">
+  391                    Start Your Project
+  392                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  393:                 </Button>
+  394                </Link>
