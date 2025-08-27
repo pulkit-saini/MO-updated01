@@ -28,7 +28,7 @@ export const authService = {
       }
 
       if (!profile) {
-        throw new Error('Invalid credentials');
+        throw new Error('Invalid credentials - profile');
       }
 
       // Compare password with stored hash
@@ -37,7 +37,7 @@ export const authService = {
       const isValidPassword = await bcrypt.compare(password, profile.password_hash);
       
       if (!isValidPassword) {
-        throw new Error('Invalid credentials');
+        throw new Error('Invalid credentials - password');
       }
 
       return {
