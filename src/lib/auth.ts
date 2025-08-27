@@ -24,7 +24,7 @@ export const authService = {
 
       if (error) {
         console.error('Database error:', error);
-        throw new Error('Invalid credentials');
+        throw new Error('SupaBase - Invalid credentials');
       }
 
       if (!profile) {
