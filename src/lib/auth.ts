@@ -24,33 +24,24 @@ export const authService = {
 
       if (error) {
         console.error('Database error:', error);
-        throw new Error('Invalid credentials');
+         console.log("SupaBase- Invalid credentials");
+        throw new Error('SupaBase - Invalid credentials');
       }
 
       if (!profile) {
-        throw new Error('Invalid credentials');
+         console.log("Invalid credentials - profile");
+        throw new Error('Invalid credentials - profile');
       }
 
-      // For the default admin user, check if it's the plain text password
-      // The migration stores 'admin123' as plain text for the default user
-      let isValidPassword = false;
-      
-      
-      if (profile.email === 'admin@mangosorange.com' && password === 'admin123') {
-        // Default admin user with plain text password
-        isValidPassword = true;
-      } else {
-        // For other users, use bcrypt comparison
-        try {
-          isValidPassword = await bcrypt.compare(password, profile.password_hash);
-        } catch (error) {
-          // If bcrypt fails, try plain text comparison as fallback
-          isValidPassword = password === profile.password_hash;
-        }
-      }
+      // Compare password with stored hash
+      // For the default admin user, we'll use simple comparison
+      // In production, you should use proper password hashing
+      const isValidPassword = await bcrypt.compare(password, profile.password_hash);
       
       if (!isValidPassword) {
-        throw new Error('Invalid credentials');
+        console.log("Invalid credentials - password");
+        throw new Error('Invalid credentials - password');
+        
       }
 
       return {
