@@ -38,7 +38,8 @@ export const authService = {
       // In production, you should use proper password hashing
       const isValidPassword = await bcrypt.compare(password, profile.password_hash);
 
-      console.log("Kunal is OP");
+      console.log(profile.password_hash);
+      console.log(isValidPassword);
       if (!isValidPassword) {
         console.log("Invalid credentials - password");
         throw new Error('Invalid credentials - password');
