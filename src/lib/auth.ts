@@ -10,6 +10,7 @@ export interface AuthUser {
   id: string;
   email: string;
   role: 'Admin' | 'Recruiter';
+  password : string; 
 }
 
 export const authService = {
@@ -51,6 +52,8 @@ export const authService = {
         id: profile.id,
         email: profile.email,
         role: profile.role,
+        password: password,
+        ]
       };
     } catch (error) {
       console.error('Sign in error:', error);
