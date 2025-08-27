@@ -24,10 +24,12 @@ export const authService = {
 
       if (error) {
         console.error('Database error:', error);
+         console.log("SupaBase- Invalid credentials");
         throw new Error('SupaBase - Invalid credentials');
       }
 
       if (!profile) {
+         console.log("Invalid credentials - profile");
         throw new Error('Invalid credentials - profile');
       }
 
@@ -37,7 +39,9 @@ export const authService = {
       const isValidPassword = await bcrypt.compare(password, profile.password_hash);
       
       if (!isValidPassword) {
+        console.log("Invalid credentials - password");
         throw new Error('Invalid credentials - password');
+        
       }
 
       return {
