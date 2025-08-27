@@ -10,7 +10,6 @@ export interface AuthUser {
   id: string;
   email: string;
   role: 'Admin' | 'Recruiter';
-  password : string; 
 }
 
 export const authService = {
@@ -25,35 +24,26 @@ export const authService = {
 
       if (error) {
         console.error('Database error:', error);
-         console.log("SupaBase- Invalid credentials");
-        throw new Error('SupaBase - Invalid credentials');
+        throw new Error('Invalid credentials');
       }
 
       if (!profile) {
-         console.log("Invalid credentials - profile");
-        throw new Error('Invalid credentials - profile');
+        throw new Error('Invalid credentials');
       }
 
       // Compare password with stored hash
       // For the default admin user, we'll use simple comparison
       // In production, you should use proper password hashing
-     const isValidPassword = await bcrypt.compare(password, profile.password_hash);
-
-      //const isValidPassword = true; 
-
+      const isValidPassword = await bcrypt.compare(password, profile.password_hash);
       
       if (!isValidPassword) {
-        console.log("Invalid credentials - password");
-        throw new Error('Invalid credentials - password');
-        
+        throw new Error('Invalid credentials');
       }
 
       return {
         id: profile.id,
         email: profile.email,
         role: profile.role,
-        password: password,
-        ]
       };
     } catch (error) {
       console.error('Sign in error:', error);
@@ -61,7 +51,6 @@ export const authService = {
     }
   },
 
-  
   async signUp(email: string, password: string, role: 'Admin' | 'Recruiter' = 'Recruiter'): Promise<AuthUser | null> {
     try {
       // Create admin profile directly in database
@@ -89,14 +78,7 @@ export const authService = {
       return null;
     }
   },
- 
 
-/* ----------------Kunal Code ------------------ */
- 
- 
-
-/* ---------------- Kunal Code Ends here------------------ */
-  
   async signOut(): Promise<void> {
     // Clear any stored session data
     localStorage.removeItem('admin_user');
