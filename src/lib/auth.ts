@@ -57,7 +57,7 @@ export const authService = {
     }
   },
 
-  async signUp(email: string, password: string, role: 'Admin' | 'Recruiter' = 'Recruiter'): Promise<AuthUser | null> {
+ /* async signUp(email: string, password: string, role: 'Admin' | 'Recruiter' = 'Recruiter'): Promise<AuthUser | null> {
     try {
       // Create admin profile directly in database
       const { data: profile, error } = await supabase
@@ -84,7 +84,40 @@ export const authService = {
       return null;
     }
   },
+*/
 
+  async function signUp(
+  email: string, 
+  password: string, 
+  role: 'Admin' | 'Recruiter' = 'Recruiter'
+): Promise<AuthUser | null> {
+  try {
+    // Hash password before storing
+    const saltRounds = 10;
+    const passwordHash = await bcrypt.hash(password, saltRounds);
+
+    // Insert new user
+    const { data: profile, error } = await supabase
+      .from('admin_users')
+      .insert({
+        email,
+        password_hash: passwordHash,
+        role,
+      })
+      .select('id, email, role')
+      .single();
+
+    if (error) {
+      // Handle duplicate email gracefully
+      if (error.code === '23505') { // unique_violation in Postgres
+        throw new Error('Email already in use');
+      }
+      throw error;
+    }
+
+
+    /* ---------------------------------- */
+  
   async signOut(): Promise<void> {
     // Clear any stored session data
     localStorage.removeItem('admin_user');
