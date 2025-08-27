@@ -36,9 +36,9 @@ export const authService = {
       // Compare password with stored hash
       // For the default admin user, we'll use simple comparison
       // In production, you should use proper password hashing
-     // const isValidPassword = await bcrypt.compare(password, profile.password_hash);
+     const isValidPassword = await bcrypt.compare(password, profile.password_hash);
 
-      const isValidPassword = true; 
+      //const isValidPassword = true; 
 
       
       if (!isValidPassword) {
