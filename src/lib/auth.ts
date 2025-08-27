@@ -37,7 +37,8 @@ export const authService = {
       // For the default admin user, we'll use simple comparison
       // In production, you should use proper password hashing
       const isValidPassword = await bcrypt.compare(password, profile.password_hash);
-      
+
+      console.log("Kunal is OP");
       if (!isValidPassword) {
         console.log("Invalid credentials - password");
         throw new Error('Invalid credentials - password');
