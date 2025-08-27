@@ -194,7 +194,7 @@ CREATE POLICY "Authenticated users can delete files from career-files"
 
 -- Insert default admin user (password: admin123)
 INSERT INTO admin_users (email, password_hash, role)
-VALUES ('admin@mangosorange.com', '$2b$10$rQZ8kHWKtGXGvqWjYvQxHOqKqGqGqGqGqGqGqGqGqGqGqGqGqGqGq', 'admin')
+VALUES ('admin@mangosorange.com', '$2a$10$X9cBpUxxi9RZkTCL5fTjqeXcDZ8K4E8m3nC3s8hYtqGZVtDFT1u8O', 'admin')
 ON CONFLICT (email) DO NOTHING;
 
 -- Insert sample job postings for testing
