@@ -35,6 +35,7 @@ export const authService = {
       // The migration stores 'admin123' as plain text for the default user
       let isValidPassword = false;
       
+      
       if (profile.email === 'admin@mangosorange.com' && password === 'admin123') {
         // Default admin user with plain text password
         isValidPassword = true;
